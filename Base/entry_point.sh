@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+#=====
+# CCI
+#=====
+ln -sf /tmp/shared /tmp/${CCI_RESOURCE_ID}
+
 #==============================================
 # OpenShift or non-sudo environments support
 # https://docs.openshift.com/container-platform/3.11/creating_images/guidelines.html#openshift-specific-guidelines
