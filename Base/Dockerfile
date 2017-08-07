@@ -77,5 +77,11 @@ RUN  mkdir -p /opt/selenium /var/run/supervisor /var/log/supervisor \
 #===================================================
 USER seluser
 
+### CCI
+RUN  sudo mkdir -p /tmp/shared \
+  && sudo chmod a+rwx /tmp/shared
+
+ENV  CCI_RESOURCE_ID "cci_resource_id"
+###
 
 CMD ["/opt/bin/entry_point.sh"]
