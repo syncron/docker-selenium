@@ -17,6 +17,8 @@ fi
 
 SERVERNUM=$(get_server_num)
 
+ln -sf /tmp/shared /tmp/${CCI_RESOURCE_ID}
+
 rm -f /tmp/.X*lock
 
 xvfb-run -n $SERVERNUM --server-args="-screen 0 $GEOMETRY -ac +extension RANDR" \

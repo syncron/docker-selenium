@@ -58,3 +58,8 @@ RUN  sudo mkdir -p /opt/selenium \
   && sudo chown seluser:seluser /opt/selenium \
   && wget --no-verbose https://selenium-release.storage.googleapis.com/3.12/selenium-server-standalone-3.12.0.jar \
     -O /opt/selenium/selenium-server-standalone.jar
+
+RUN  sudo mkdir -p /tmp/shared \
+  && sudo chmod a+rwx /tmp/shared
+
+ENV  CCI_RESOURCE_ID "\$CCI_RESOURCE_ID"
