@@ -62,4 +62,4 @@ RUN  sudo mkdir -p /opt/selenium \
 RUN  sudo mkdir -p /tmp/shared \
   && sudo chmod a+rwx /tmp/shared
 
-ENV  CCI_RESOURCE_ID "\$CCI_RESOURCE_ID"
+ENV  CCI_RESOURCE_ID "cci_resource_id"
