@@ -55,7 +55,7 @@ firefox: nodebase generate_firefox
 	cd ./NodeFirefox && docker build $(BUILD_ARGS) -t $(NAME)/node-firefox:$(VERSION) .
 
 generate_standalone_firefox:
-	cd ./Standalone && ./generate.sh StandaloneFirefox node-firefox Firefox $(VERSION) $(NAMESPACE) $(AUTHORS)
+	cd ./Standalone && ./generate.sh StandaloneFirefox firefox Firefox 31-1.3 packages.syncron.team:6666/cci $(AUTHORS)
 
 standalone_firefox: generate_standalone_firefox firefox
 	cd ./StandaloneFirefox && docker build $(BUILD_ARGS) -t $(NAME)/standalone-firefox:$(VERSION) .
