@@ -29,24 +29,14 @@ USER seluser
 
 #============================================
 # Chrome webdriver
-<<<<<<< 68e1ad17f8456b130ca3721b548210d2f00043f8
 #============================================
 # can specify versions by CHROME_DRIVER_VERSION
 # Latest released version will be used by default
 #============================================
-ARG CHROME_DRIVER_VERSION="latest"
+ARG CHROME_DRIVER_VERSION="2.39"
 RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $(wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE); else echo $CHROME_DRIVER_VERSION; fi) \
   && echo "Using chromedriver version: "$CD_VERSION \
   && wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CD_VERSION/chromedriver_linux64.zip \
-||||||| merged common ancestors
-#==================
-ARG CHROME_DRIVER_VERSION=2.31
-RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
-=======
-#==================
-ARG CHROME_DRIVER_VERSION=2.34
-RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
->>>>>>> Chrome 63
   && rm -rf /opt/selenium/chromedriver \
   && unzip /tmp/chromedriver_linux64.zip -d /opt/selenium \
   && rm /tmp/chromedriver_linux64.zip \
