@@ -1,1 +1,1 @@
-cci/chrome:72-1.0
+cci/chrome:80-1.0
